@@ -26,13 +26,13 @@ import io.realm.Realm;
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.TaskViewHolder> {
 
     private List<Article> mArticles;
-    private Realm mRealm;
+    
     private OnArticleClickListener mOnClickListener;
 
 
     public ArticleAdapter(OnArticleClickListener onClickListener) {
         mArticles = new ArrayList<>();
-        mRealm = Realm.getDefaultInstance();
+       
         mOnClickListener = onClickListener;
     }
 
