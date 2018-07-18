@@ -69,6 +69,8 @@ public class ArticleFragment extends Fragment implements ArticleDisplayContract.
     @Override
     public void displayArticle(Article article) {
 
+        getActivity().setTitle(article.getTitle());
+
         mTitle.setText(article.getTitle());
         Glide.with(App.getInstance().getApplicationContext())
                 .load(article.getImageUrl()).into(mImageView);

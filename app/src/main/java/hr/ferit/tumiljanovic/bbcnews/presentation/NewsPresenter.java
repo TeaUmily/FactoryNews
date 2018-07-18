@@ -35,6 +35,7 @@ public class NewsPresenter implements NewsDisplayContract.Presenter {
     @Override
     public void getArticles() {
         if(canRefresh){
+            canRefresh = false;
             mApiInteractor.getArticles(getArticleCallback());
         }
         else {
@@ -48,7 +49,6 @@ public class NewsPresenter implements NewsDisplayContract.Presenter {
             @Override
             public void onResponse(Call<ArticleList> call, Response<ArticleList> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    canRefresh = false;
                     setTimer();
                     List<Article> mArticles = response.body().mArticleList;
                     mRealmDatabase.updateArticles(mArticles);

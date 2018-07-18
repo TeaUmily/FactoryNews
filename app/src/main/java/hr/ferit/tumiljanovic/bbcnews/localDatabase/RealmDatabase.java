@@ -32,7 +32,8 @@ public class RealmDatabase {
 
     public void updateArticles(List<Article> articles){
         mRealm.beginTransaction();
-        mRealm.copyToRealmOrUpdate(articles);
+        mRealm.deleteAll();
+        mRealm.copyToRealm(articles);
         mRealm.commitTransaction();
     }
 
