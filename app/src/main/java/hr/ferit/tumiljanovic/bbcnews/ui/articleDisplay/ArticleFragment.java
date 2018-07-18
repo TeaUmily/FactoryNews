@@ -69,6 +69,7 @@ public class ArticleFragment extends Fragment implements ArticleDisplayContract.
     @Override
     public void displayArticle(Article article) {
 
+        //Nesto u ovom pozivu za naslov ne stima
         getActivity().setTitle(article.getTitle());
 
         mTitle.setText(article.getTitle());
